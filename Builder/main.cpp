@@ -32,6 +32,12 @@ public:
 	}
 };
 
+/*
+ÏÎ×ÅÌÓ BUILDER ËÓ×ØÅ ÊÎÍÑÒÐÓÊÒÎÐÀ Ñ ÏÀÐÀÌÅÒÐÀÌÈ:
+1. Íå íàäî ïèñàòü 100500 êîíñòðóêòîðîâ
+2. Íå çàïóòàåøüñÿ â ïàðàìåòðàõ
+3. Ìîæíî äîáàâëÿòü ÷òî õî÷åøü
+*/
 class BurgerBuilder
 {
 protected:
@@ -117,7 +123,7 @@ int main() {
 
 	VeganBurgerBuilder veganBurger;
 	cashier.setBuilder(&veganBurger);
-	Burger* veganBuilder = cashier.assemble();
+	Burger* veganBuilder = cashier.assemble(true);
 	veganBuilder->showOrder();
 
 	delete classicBuilder, veganBuilder;
